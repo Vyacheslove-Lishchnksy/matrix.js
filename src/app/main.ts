@@ -1,7 +1,11 @@
 import { drawFunctionArgumants } from "../components/AppBody";
-import { convertRgbToPixelColor } from "./setaps/colorama/PixelColor";
+import { convertRgbToPixelColor } from "./setaps/colorama/pixelColor";
 
 let iterator = 0;
+
+export const before = ({ matrix, matrixBody }: drawFunctionArgumants) => {
+
+}
 
 export const draw = ({ matrix, matrixBody }: drawFunctionArgumants) => {
   matrix.off(matrixBody);

@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import Matrix from "../surse/Matrix";
 import Pixsel from "./Pixel/Pixel";
 import { backgroundColor } from "../surse/intefases";
+import { before, draw } from "../app/main";
 
 interface propsForAppBody {
   matrix: Matrix,
   matrixBody: backgroundColor[];
   printer: React.Dispatch<React.SetStateAction<backgroundColor[]>>,
-  draw: Function,
 }
 
 export interface drawFunctionArgumants {
@@ -17,7 +17,8 @@ export interface drawFunctionArgumants {
   isWorkStart?: boolean,
 }
 
-const AppBody = ({ matrix, matrixBody, printer, draw }: propsForAppBody): JSX.Element => {
+const AppBody = ({ matrix, matrixBody, printer }: propsForAppBody): JSX.Element => {
+  before({ matrix, matrixBody, printer });
   useEffect(() => {
     const interval = setInterval(() => {
       draw({ matrix, matrixBody, printer });
@@ -25,7 +26,7 @@ const AppBody = ({ matrix, matrixBody, printer, draw }: propsForAppBody): JSX.El
     }, matrix.timeFrame);
 
     return () => clearInterval(interval);
-  }, [draw, matrix, matrixBody, printer])
+  }, [matrix, matrixBody, printer])
 
   return (
     <>

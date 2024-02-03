@@ -2,7 +2,7 @@
 
 export interface coordinate {
   x: number,
-  y: number
+  y: number,
 }
 export interface backgroundColor {
   background: string,
