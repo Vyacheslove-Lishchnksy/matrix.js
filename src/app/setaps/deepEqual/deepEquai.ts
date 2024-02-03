@@ -4,13 +4,12 @@ function deepEqual(obj1: Object, obj2: Object) {
 }
 
 export function deepEqualIsIn(array: Object[], obj: Object) {
-  let result = false;
   array.forEach((element) => {
     if (deepEqual(element, obj)) {
-      result = true;
+      return true;
     }
   });
-  return result;
+  return false;
 }
 
 export default deepEqual;

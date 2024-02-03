@@ -2,7 +2,7 @@ import React from "react";
 import useMatrix from "../../utils/hooks/useMatrix";
 import { paramsForMatrix } from "../../utils/constants";
 import AppBody from "../AppBody";
-import { MatrixBodyStyle } from "./MarginBodyStyle";
+import { MatrixBodyStyle } from "./MatrixBodyStyle";
 import "./MatrixBodyStyle.css"
 
 interface propsForMatrixBody {

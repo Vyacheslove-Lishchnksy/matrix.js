@@ -1,22 +1,11 @@
 import { drawFunctionArgumants } from "../components/AppBody";
-import { convertRgbToPixelColor } from "./setaps/colorama/pixelColor";
-
-let iterator = 0;
+import { getRandomBackGroundColor } from "./setaps/colorama/pixelColor";
+import { drawCircle } from "./setaps/drawer/drawer";
 
 export const before = ({ matrix, matrixBody }: drawFunctionArgumants) => {
 
 }
 
 export const draw = ({ matrix, matrixBody }: drawFunctionArgumants) => {
-  matrix.off(matrixBody);
-  matrix.drawer.drawPixel(matrixBody, {
-    x: iterator % matrix.coluns,
-    y: Math.floor(iterator / matrix.coluns)
-  },
-    convertRgbToPixelColor({ red: 0, green: 0, blue: 180 })
-  );
-  iterator++;
-  if (iterator > matrix.lenght) {
-    iterator = 0;
-  };
+  drawCircle(matrix, matrixBody, { center: { x: 7.5, y: 7.5 }, radius: 6, fill: getRandomBackGroundColor() });
 };

@@ -18,15 +18,24 @@ export interface drawFunctionArgumants {
 }
 
 const AppBody = ({ matrix, matrixBody, printer }: propsForAppBody): JSX.Element => {
-  before({ matrix, matrixBody, printer });
+  let isWorkStart = false;
+
+  useEffect(() => {
+    before({ matrix, matrixBody, printer });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   useEffect(() => {
     const interval = setInterval(() => {
       draw({ matrix, matrixBody, printer });
       printer([...matrixBody])
+
     }, matrix.timeFrame);
 
     return () => clearInterval(interval);
-  }, [matrix, matrixBody, printer])
+  }, [isWorkStart, matrix, matrixBody, printer])
+
+
 
   return (
     <>

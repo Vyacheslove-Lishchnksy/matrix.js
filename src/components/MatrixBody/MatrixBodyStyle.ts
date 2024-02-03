@@ -1,6 +1,5 @@
 
 export const MatrixBodyStyle = {
-
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
