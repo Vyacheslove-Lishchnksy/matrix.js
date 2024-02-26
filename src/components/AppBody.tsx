@@ -3,37 +3,44 @@ import Matrix from "../surse/Matrix";
 import Pixsel from "./Pixel/Pixel";
 import { backgroundColor } from "../surse/intefases";
 import { before, draw } from "../app/main";
+import checkIsThisParamsValide from "../surse/checkIsThisParamsValide";
 
 interface propsForAppBody {
-  matrix: Matrix,
+  matrix: Matrix;
   matrixBody: backgroundColor[];
-  printer: React.Dispatch<React.SetStateAction<backgroundColor[]>>,
+  printer: React.Dispatch<React.SetStateAction<backgroundColor[]>>;
 }
 
 export interface drawFunctionArgumants {
-  matrix: Matrix,
-  matrixBody: backgroundColor[];
-  printer: React.Dispatch<React.SetStateAction<backgroundColor[]>>,
-  isWorkStart?: boolean,
+  matrix: Matrix;
+  printer: React.Dispatch<React.SetStateAction<backgroundColor[]>>;
+  pressNow: string;
 }
 
+let pressNow: string = "";
+
 const AppBody = ({ matrix, matrixBody, printer }: propsForAppBody): JSX.Element => {
-  let isWorkStart = false;
+  const handleKeyDown = (event: KeyboardEvent) => {
+    pressNow = event.key
+  }
 
   useEffect(() => {
-    before({ matrix, matrixBody, printer });
+    document.addEventListener("keydown", handleKeyDown)
+    checkIsThisParamsValide(matrix)
+    before({ matrix, printer, pressNow });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+
   useEffect(() => {
     const interval = setInterval(() => {
-      draw({ matrix, matrixBody, printer });
-      printer([...matrixBody])
-
+      draw({ matrix, printer, pressNow });
+      printer([...matrix.body])
+      pressNow = "";
     }, matrix.timeFrame);
 
     return () => clearInterval(interval);
-  }, [isWorkStart, matrix, matrixBody, printer])
+  }, [matrix, printer])
 
 
 

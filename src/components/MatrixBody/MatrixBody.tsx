@@ -1,18 +1,18 @@
 import React from "react";
 import useMatrix from "../../utils/hooks/useMatrix";
-import { paramsForMatrix } from "../../utils/constants";
 import AppBody from "../AppBody";
 import { MatrixBodyStyle } from "./MatrixBodyStyle";
 import "./MatrixBodyStyle.css"
 
-interface propsForMatrixBody {
-  params: paramsForMatrix;
-}
 
-const MatrixBody = ({ params }: propsForMatrixBody): JSX.Element => {
-  const [matrix, [matrixBody, setMatrixBody]] = useMatrix(params);
+/**
+ * Основне тіло матриці.
+ * @param {paramsForMatrix} parama - параметри для матриці.
+ */
+const MatrixBody = (): JSX.Element => {
+  const [matrix, [matrixBody, setMatrixBody]] = useMatrix();
   return (
-    <div className="matrix" style={MatrixBodyStyle}>
+    <div className="matrix" style={MatrixBodyStyle} data-testid="matrix">
       <AppBody matrix={matrix} matrixBody={matrixBody} printer={setMatrixBody} />
     </div>
   )

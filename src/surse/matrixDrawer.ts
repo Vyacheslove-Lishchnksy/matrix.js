@@ -1,28 +1,36 @@
 import Matrix from "./Matrix";
 import { backgroundColor, coordinate } from "./intefases";
-
-export default class matrixDrawer {
+/**
+ * Відповідає за малювання пікселів на матриці.
+ */
+export default class MatrixDrawer {
   private startX: number = 0;
   private matrix: Matrix;
 
   constructor(matrix: Matrix) {
     this.matrix = matrix;
   }
-
-  public drawPixel = (matrixBody: Array<backgroundColor>, { x, y }: coordinate, fill: backgroundColor) => {
+  /**
+   * Заповнює піксель відповідним кольром.
+   * @param {coordinate} { x, y } - координати точки на матриці.
+   * @param {backgroundColor} fill - колір пікселю.
+   * @returns {void}
+   */
+  public drawPixel = ({ x, y }: coordinate, fill: backgroundColor) => {
     const matrixCoordinate: number = this.matrix.adaptCoordinate({ x, y });
+    try {
+      this.matrix.body[matrixCoordinate] = fill;
+    } catch {
 
-    if (matrixCoordinate >= this.startX) {
-      matrixBody[matrixCoordinate] = fill;
-      return;
-    } else {
-      return;
-    };
+    }
   };
-
-  public filling = (matrixBody: Array<backgroundColor>, fill: backgroundColor): void => {
+  /**
+   * Заповненя матриці одним кольором.
+   * @param {backgroundColor} fill - колір яким буде заповнено. 
+   */
+  public filling = (fill: backgroundColor): void => {
     for (let x = this.startX; x < this.matrix.lenght; x++) {
-      matrixBody[x] = fill;
+      this.matrix.body[x] = fill;
     }
 
   };

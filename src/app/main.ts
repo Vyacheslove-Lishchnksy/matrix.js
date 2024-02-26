@@ -1,11 +1,22 @@
 import { drawFunctionArgumants } from "../components/AppBody";
-import { getRandomBackGroundColor } from "./setaps/colorama/pixelColor";
-import { drawCircle } from "./setaps/drawer/drawer";
+import { white } from "./setaps/colorama/colors";
+import { drawDozens } from "./setaps/drawer/numbers";
 
-export const before = ({ matrix, matrixBody }: drawFunctionArgumants) => {
-
+export const before = ({ matrix }: drawFunctionArgumants) => {
 }
 
-export const draw = ({ matrix, matrixBody }: drawFunctionArgumants) => {
-  drawCircle(matrix, matrixBody, { center: { x: 7.5, y: 7.5 }, radius: 6, fill: getRandomBackGroundColor() });
+let frameCounter = 0;
+let iterator = 0;
+
+export const draw = ({ matrix }: drawFunctionArgumants) => {
+  matrix.off();
+  drawDozens(matrix, iterator, { position: { x: 3, y: 4 }, fill: white })
+  if (frameCounter === 3) {
+    iterator++
+    frameCounter = 0
+  }
+  if (iterator > 99) {
+    iterator = 0;
+  }
+  frameCounter++
 };

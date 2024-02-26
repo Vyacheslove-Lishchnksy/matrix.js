@@ -7,7 +7,7 @@ interface propsForPixel {
 
 const Pixsel = ({ color }: propsForPixel) => {
   return (
-    <div className="pixel" style={{ ...PixelStyle, ...color }}>
+    <div className="pixel" style={{ ...PixelStyle, ...color }} data-testid="pixel">
     </div>
   );
 };

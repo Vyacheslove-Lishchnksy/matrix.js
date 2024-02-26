@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { paramsForMatrix } from "../constants";
-import Matrix from "../../surse/Matrix";
 import { backgroundColor } from "../../surse/intefases";
+import { matrixParams } from "../constants";
+import Matrix from "../../surse/Matrix";
 
 type useMatrixResult = [Matrix, [backgroundColor[], React.Dispatch<React.SetStateAction<backgroundColor[]>>]]
 
-const useMatrix = (matrixParams: paramsForMatrix): useMatrixResult => {
-  const matrix = new Matrix(matrixParams);
+const matrix = new Matrix(matrixParams)
+
+const useMatrix = (): useMatrixResult => {
   return [matrix, useState(matrix.body)]
 }
 
