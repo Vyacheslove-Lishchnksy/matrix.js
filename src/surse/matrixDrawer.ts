@@ -17,8 +17,8 @@ export default class MatrixDrawer {
    * @returns {void}
    */
   public drawPixel = ({ x, y }: coordinate, fill: backgroundColor) => {
-    const matrixCoordinate: number = this.matrix.adaptCoordinate({ x, y });
     try {
+      const matrixCoordinate: number = this.matrix.adaptCoordinate({ x, y });
       this.matrix.body[matrixCoordinate] = fill;
     } catch {
 

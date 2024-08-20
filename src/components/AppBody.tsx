@@ -4,6 +4,7 @@ import Pixsel from "./Pixel/Pixel";
 import { backgroundColor } from "../surse/intefases";
 import { before, draw } from "../app/main";
 import checkIsThisParamsValide from "../surse/checkIsThisParamsValide";
+import { argv } from "process";
 
 interface propsForAppBody {
   matrix: Matrix;
@@ -20,7 +21,7 @@ export interface drawFunctionArgumants {
 let pressNow: string = "";
 
 const AppBody = ({ matrix, matrixBody, printer }: propsForAppBody): JSX.Element => {
-  const handleKeyDown = (event: KeyboardEvent) => {
+  const handleKeyDown = async (event: KeyboardEvent) => {
     pressNow = event.key
   }
 

@@ -7,7 +7,8 @@ interface paramsForApp {
 }
 
 const valideParamsForApp: paramsForApp = {
-
+  rowMoreThen: 16,
+  colunMoreThen: 16,
 }
 
 export default valideParamsForApp;

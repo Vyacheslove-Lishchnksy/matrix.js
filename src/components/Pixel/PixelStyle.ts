@@ -6,4 +6,6 @@ export const PixelStyle = {
   height: `calc(min(92dvh, 92dvw) / ${matrixParams.rows})`,
   BoxSizing: "border-box",
   border: "solid",
+  borderWidth: "min(0.2vw, 2px)",
+  borderRadius: "min(2vw, 0.7em)"
 }

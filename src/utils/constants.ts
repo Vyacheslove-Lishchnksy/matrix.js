@@ -7,5 +7,5 @@ export interface paramsForMatrix {
 export const matrixParams: paramsForMatrix = {
   columns: 16,
   rows: 16,
-  fps: 3
+  fps: 5
 }
