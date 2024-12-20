@@ -4,7 +4,6 @@ import Pixsel from "./Pixel/Pixel";
 import { backgroundColor } from "../surse/intefases";
 import { before, draw } from "../app/main";
 import checkIsThisParamsValide from "../surse/checkIsThisParamsValide";
-import { argv } from "process";
 
 interface propsForAppBody {
   matrix: Matrix;
@@ -15,14 +14,14 @@ interface propsForAppBody {
 export interface drawFunctionArgumants {
   matrix: Matrix;
   printer: React.Dispatch<React.SetStateAction<backgroundColor[]>>;
-  pressNow: string;
+  pressNow: number;
 }
 
-let pressNow: string = "";
+let pressNow: number = -1;
 
 const AppBody = ({ matrix, matrixBody, printer }: propsForAppBody): JSX.Element => {
   const handleKeyDown = async (event: KeyboardEvent) => {
-    pressNow = event.key
+    pressNow = event.keyCode
   }
 
   useEffect(() => {
@@ -37,7 +36,7 @@ const AppBody = ({ matrix, matrixBody, printer }: propsForAppBody): JSX.Element 
     const interval = setInterval(() => {
       draw({ matrix, printer, pressNow });
       printer([...matrix.body])
-      pressNow = "";
+      pressNow = -1;
     }, matrix.timeFrame);
 
     return () => clearInterval(interval);

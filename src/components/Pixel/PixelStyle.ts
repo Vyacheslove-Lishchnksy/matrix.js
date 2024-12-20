@@ -1,11 +1,11 @@
-import { matrixParams } from "../../utils/constants";
+import { widthOfPixel } from "../MatrixBody/MatrixBodyStyle";
 
 export const PixelStyle = {
   margin: "0",
-  width: `calc(min(92dvh, 92dvw) / ${matrixParams.columns})`,
-  height: `calc(min(92dvh, 92dvw) / ${matrixParams.rows})`,
+  width: `${widthOfPixel}`,
+  height: `${widthOfPixel}`,
   BoxSizing: "border-box",
   border: "solid",
   borderWidth: "min(0.2vw, 2px)",
-  borderRadius: "min(2vw, 0.7em)"
+  borderRadius: "0.7em"
 }

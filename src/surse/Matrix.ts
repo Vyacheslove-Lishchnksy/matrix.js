@@ -57,4 +57,3 @@ export default class Matrix {
     this.drawer.filling(this.colorPixelOff);
   }
 };
-

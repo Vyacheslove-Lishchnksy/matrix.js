@@ -1,17 +1,16 @@
-class Vector2D {
+import { coordinate } from "../../../surse/intefases";
+import Coordinate2D from "./Coordinate2D";
 
-  public x: number;
-  public y: number;
+class Vector2D extends Coordinate2D {
   public lenght: number;
 
-  constructor(x: number, y: number) {
-    this.x = x;
-    this.y = y;
+  constructor({ x, y }: coordinate) {
+    super({ x, y })
     this.lenght = Math.sqrt(this.x ** 2 + this.y ** 2);
   }
 
   toString() {
-    return `[${this.x}, ${this.y}]`;
+    return `[ ${this.x}, ${this.y} ]`;
   }
 
   public add(vector: Vector2D) {
@@ -39,7 +38,7 @@ class Vector2D {
   }
 
   public static random() {
-    return new Vector2D(Math.random(), Math.random())
+    return new Vector2D({ x: Math.random(), y: Math.random() })
   }
 }
 

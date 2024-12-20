@@ -27,9 +27,6 @@ export const drawNumber = (matrix: Matrix, int: number, { position, fill }: inte
 }
 
 export const drawDozens = (matrix: Matrix, int: number, { position, fill, betwean }: integerParams) => {
-  if (!betwean) {
-    betwean = 2;
-  }
   drawNumber(matrix, (int - (int % 10)) / 10, { position, fill })
-  drawNumber(matrix, int % 10, { position: { x: position.x + 4 + betwean, y: position.y }, fill })
+  drawNumber(matrix, int % 10, { position: { x: position.x + 4 + (betwean ?? 2), y: position.y }, fill })
 }

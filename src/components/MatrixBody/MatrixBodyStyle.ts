@@ -1,11 +1,14 @@
+import { matrixParams } from "../../utils/constants";
+
+export let widthOfPixel = `calc(min(92dvh / ${matrixParams.rows}, 92dvw / ${matrixParams.columns})`;
 
 export const MatrixBodyStyle = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   FlexWrap: true,
-  width: `min(92dvh, 92dvw)`,
-  height: `min(92dvh, 92dvw)`,
+  width: `calc(${widthOfPixel} * ${matrixParams.columns})`,
+  height: `calc(${widthOfPixel} * ${matrixParams.rows})`,
   background: "#000",
   border: "solid",
   borderWidth: "1dvh",
