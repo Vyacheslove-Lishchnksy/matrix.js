@@ -1,7 +1,7 @@
 import { paramsForMatrix } from "../utils/constants";
 import { MatrixAdaptCoordinateError, MatrixParamsError } from "./MatrixErrors";
 import { backgroundColor, coordinate } from "./intefases";
-import MatrixDrawer from "./matrixDrawer";
+import MatrixDrawer from "./MatrixDrawer";
 import MatrixTaster from "./MatrixTester";
 /**
  * Головний об'єкт який відповідає за зміни в matrixBody
