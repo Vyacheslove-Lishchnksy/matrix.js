@@ -20,19 +20,15 @@ export default class MatrixDrawer {
     try {
       const matrixCoordinate: number = this.matrix.adaptCoordinate({ x, y });
       this.matrix.body[matrixCoordinate] = fill;
-    } catch {
-
-    }
+    } catch {}
   };
   /**
    * Заповненя матриці одним кольором.
-   * @param {backgroundColor} fill - колір яким буде заповнено. 
+   * @param {backgroundColor} fill - колір яким буде заповнено.
    */
   public filling = (fill: backgroundColor): void => {
     for (let x = this.startX; x < this.matrix.lenght; x++) {
       this.matrix.body[x] = fill;
     }
-
   };
-
 }

@@ -2,17 +2,16 @@
  * Зберігає всі розмітки цифр 4х8
  */
 class Integer {
-  private static one =
-    [
-      [0, 1, 1, 0],
-      [0, 0, 1, 0],
-      [0, 0, 1, 0],
-      [0, 0, 1, 0],
-      [0, 0, 1, 0],
-      [0, 0, 1, 0],
-      [0, 0, 1, 0],
-      [0, 1, 1, 1],
-    ]
+  private static one = [
+    [0, 1, 1, 0],
+    [0, 0, 1, 0],
+    [0, 0, 1, 0],
+    [0, 0, 1, 0],
+    [0, 0, 1, 0],
+    [0, 0, 1, 0],
+    [0, 0, 1, 0],
+    [0, 1, 1, 1],
+  ];
 
   private static two = [
     [0, 1, 1, 0],
@@ -23,7 +22,7 @@ class Integer {
     [0, 1, 0, 0],
     [1, 0, 0, 1],
     [1, 1, 1, 1],
-  ]
+  ];
 
   private static three = [
     [0, 1, 1, 0],
@@ -34,7 +33,7 @@ class Integer {
     [0, 0, 0, 1],
     [1, 0, 0, 1],
     [0, 1, 1, 0],
-  ]
+  ];
 
   private static four = [
     [0, 0, 0, 1],
@@ -45,7 +44,7 @@ class Integer {
     [1, 1, 1, 1],
     [0, 0, 0, 1],
     [0, 0, 0, 1],
-  ]
+  ];
 
   private static five = [
     [1, 1, 1, 1],
@@ -56,7 +55,7 @@ class Integer {
     [0, 0, 0, 1],
     [1, 0, 0, 1],
     [0, 1, 1, 0],
-  ]
+  ];
 
   private static six = [
     [0, 1, 1, 0],
@@ -67,7 +66,7 @@ class Integer {
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [0, 1, 1, 0],
-  ]
+  ];
 
   private static seven = [
     [1, 1, 1, 1],
@@ -78,7 +77,7 @@ class Integer {
     [0, 1, 0, 0],
     [0, 1, 0, 0],
     [0, 1, 0, 0],
-  ]
+  ];
 
   private static eight = [
     [1, 1, 1, 1],
@@ -89,7 +88,7 @@ class Integer {
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [1, 1, 1, 1],
-  ]
+  ];
 
   private static nine = [
     [0, 1, 1, 0],
@@ -100,7 +99,7 @@ class Integer {
     [0, 0, 0, 1],
     [1, 0, 0, 1],
     [0, 1, 1, 0],
-  ]
+  ];
 
   private static zero = [
     [0, 1, 1, 0],
@@ -111,12 +110,20 @@ class Integer {
     [1, 0, 0, 1],
     [1, 0, 0, 1],
     [0, 1, 1, 0],
-  ]
+  ];
 
   public static numbers = [
-    this.zero, this.one, this.two,
-    this.three, this.four, this.five,
-    this.six, this.seven, this.eight, this.nine]
+    this.zero,
+    this.one,
+    this.two,
+    this.three,
+    this.four,
+    this.five,
+    this.six,
+    this.seven,
+    this.eight,
+    this.nine,
+  ];
 }
 
 export default Integer;

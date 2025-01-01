@@ -9,11 +9,11 @@ class Random {
   }
 
   private makeSeed(seed: number) {
-    this.seed = (this.a * seed + this.c);
+    this.seed = this.a * seed + this.c;
   }
 
   public getRandom(): number {
-    const randomNumber = (this.seed % this.m);
+    const randomNumber = this.seed % this.m;
     this.makeSeed(randomNumber);
     return randomNumber / this.m;
   }
@@ -29,7 +29,6 @@ class Random {
       this.c = m;
     }
   }
-
 }
 
 export interface randomParams {

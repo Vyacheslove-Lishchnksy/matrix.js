@@ -1,6 +1,6 @@
-import React from 'react';
-import MatrixBody from './components/MatrixBody/MatrixBody';
-import "./App.css"
+import React from "react";
+import MatrixBody from "./components/MatrixBody/MatrixBody";
+import "./App.css";
 
 function App(): JSX.Element {
   return (

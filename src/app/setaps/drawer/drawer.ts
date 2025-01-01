@@ -2,18 +2,22 @@ import Matrix from "../../../surse/Matrix";
 import { backgroundColor, coordinate } from "../../../surse/intefases";
 
 interface circleParams {
-  center: coordinate,
-  radius: number,
-  fill: backgroundColor
+  center: coordinate;
+  radius: number;
+  fill: backgroundColor;
 }
 
-const isPointOfCircle = (center: coordinate, dot: coordinate, radius: number): boolean => {
+const isPointOfCircle = (
+  center: coordinate,
+  dot: coordinate,
+  radius: number
+): boolean => {
   if ((dot.x - center.x) ** 2 + (dot.y - center.y) ** 2 <= radius ** 2) {
     return true;
   } else {
     return false;
   }
-}
+};
 /**
  * Малює коло на матриці
  * @param {Matrix} matrix - об'єкт матриці
@@ -23,7 +27,10 @@ const isPointOfCircle = (center: coordinate, dot: coordinate, radius: number): b
  * {backgroundColor} fill - колір кола
  * }
  */
-export const drawCircle = (matrix: Matrix, { center, radius, fill }: circleParams) => {
+export const drawCircle = (
+  matrix: Matrix,
+  { center, radius, fill }: circleParams
+) => {
   for (let x = 0; x < matrix.columns; x++) {
     for (let y = 0; y < matrix.rows; y++) {
       if (isPointOfCircle(center, { x, y }, radius)) {
@@ -31,4 +38,4 @@ export const drawCircle = (matrix: Matrix, { center, radius, fill }: circleParam
       }
     }
   }
-}
+};

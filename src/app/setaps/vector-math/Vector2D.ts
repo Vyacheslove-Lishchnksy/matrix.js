@@ -5,7 +5,7 @@ class Vector2D extends Coordinate2D {
   public lenght: number;
 
   constructor({ x, y }: coordinate) {
-    super({ x, y })
+    super({ x, y });
     this.lenght = Math.sqrt(this.x ** 2 + this.y ** 2);
   }
 
@@ -38,7 +38,7 @@ class Vector2D extends Coordinate2D {
   }
 
   public static random() {
-    return new Vector2D({ x: Math.random(), y: Math.random() })
+    return new Vector2D({ x: Math.random(), y: Math.random() });
   }
 }
 

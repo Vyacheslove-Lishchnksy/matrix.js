@@ -30,7 +30,7 @@ class MatrixTaster {
       if (!deepEqual(element, pixelColor)) {
         result = false;
       }
-    })
+    });
     return result;
   }
 }

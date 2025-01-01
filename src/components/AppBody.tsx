@@ -19,41 +19,39 @@ export interface drawFunctionArgumants {
 
 let pressNow: number = -1;
 
-const AppBody = ({ matrix, matrixBody, printer }: propsForAppBody): JSX.Element => {
+const AppBody = ({
+  matrix,
+  matrixBody,
+  printer,
+}: propsForAppBody): JSX.Element => {
   const handleKeyDown = async (event: KeyboardEvent) => {
-    pressNow = event.keyCode
-  }
+    pressNow = event.keyCode;
+  };
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyDown)
-    checkIsThisParamsValide(matrix)
+    document.addEventListener("keydown", handleKeyDown);
+    checkIsThisParamsValide(matrix);
     before({ matrix, printer, pressNow });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       draw({ matrix, printer, pressNow });
-      printer([...matrix.body])
+      printer([...matrix.body]);
       pressNow = -1;
     }, matrix.timeFrame);
 
     return () => clearInterval(interval);
-  }, [matrix, printer])
-
-
+  }, [matrix, printer]);
 
   return (
     <>
-      {
-        matrixBody.map((style, index) => (
-          <Pixsel key={index} color={style} />
-        ))
-      }
+      {matrixBody.map((style, index) => (
+        <Pixsel key={index} color={style} />
+      ))}
     </>
-  )
-
-}
+  );
+};
 
 export default AppBody;

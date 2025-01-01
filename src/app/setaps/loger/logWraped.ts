@@ -3,5 +3,5 @@ export const logWraped = (fun: Function) => {
     const result = fun(...args);
     console.log(args, result);
     return result;
-  }
-}
+  };
+};

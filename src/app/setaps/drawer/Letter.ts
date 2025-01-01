@@ -1,6 +1,6 @@
 /**
  * Перевіряє чи є знак буквою
- * @param {string} symbol - Знак 
+ * @param {string} symbol - Знак
  * @returns {boolean}
  */
 export const isAlpha = (symbol: string): boolean => {
@@ -9,7 +9,7 @@ export const isAlpha = (symbol: string): boolean => {
   } else {
     return false;
   }
-}
+};
 const codes = [
   "s_dash",
   "s_spase",
@@ -21,37 +21,25 @@ const codes = [
   "s_rbracket",
   "s_interest",
   "s_emphasis",
-]
-const symbols = [
-  "-",
-  " ",
-  "/",
-  "\\",
-  ".",
-  "|",
-  "(",
-  ")",
-  "%",
-  "_",
-]
+];
+const symbols = ["-", " ", "/", "\\", ".", "|", "(", ")", "%", "_"];
 /**
  * Конвертує символ в умовний код
  * @param {string} symbol - символ
- * @returns {string} - умовний код 
-*/
+ * @returns {string} - умовний код
+ */
 export const convertSymbolToCode = (symbol: string): string => {
   if (isAlpha(symbol)) {
     return symbol.toUpperCase();
   } else {
-    const index = symbols.findIndex(element => element === symbol);
+    const index = symbols.findIndex((element) => element === symbol);
     return codes[index];
   }
-}
+};
 /**
  * Зберігає всі розмітки символів 4x8
-*/
-export const alphabet: Record<string, number[][]> =
-{
+ */
+export const alphabet: Record<string, number[][]> = {
   A: [
     [0, 1, 1, 0],
     [1, 0, 0, 1],
@@ -411,5 +399,5 @@ export const alphabet: Record<string, number[][]> =
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [1, 1, 1, 1],
-  ]
-}
+  ],
+};

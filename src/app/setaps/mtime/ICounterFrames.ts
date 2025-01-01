@@ -1,2 +1,1 @@
-export interface ICounterFrames {
-}
+export interface ICounterFrames {}

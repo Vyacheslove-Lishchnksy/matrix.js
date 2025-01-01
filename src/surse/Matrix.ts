@@ -1,14 +1,16 @@
 import { paramsForMatrix } from "../utils/constants";
 import { MatrixAdaptCoordinateError, MatrixParamsError } from "./MatrixErrors";
 import { backgroundColor, coordinate } from "./intefases";
-import MatrixDrawer from "./MatrixDrawer";
+import MatrixDrawer from "./matrixDrawer";
 import MatrixTaster from "./MatrixTester";
 /**
  * Головний об'єкт який відповідає за зміни в matrixBody
  */
 export default class Matrix {
   private startX: number = 0;
-  private colorPixelOff: backgroundColor = { background: `rgba(${23}, ${23}, ${23}, ${1})` };
+  private colorPixelOff: backgroundColor = {
+    background: `rgba(${23}, ${23}, ${23}, ${1})`,
+  };
   public body: Array<backgroundColor> = [];
   public fps: number;
   public columns: number = 0;
@@ -40,20 +42,22 @@ export default class Matrix {
   }
   /**
    * Adapt coordinate for matrix
-   * @param {coordinate} {x, y} - user coordinate  
+   * @param {coordinate} {x, y} - user coordinate
    * @returns {number} dot in array
    */
   public adaptCoordinate({ x, y }: coordinate): number {
     if (this.columns > x && this.rows > y && x >= 0 && y >= 0) {
       return this.columns * y + x;
     } else {
-      throw new MatrixAdaptCoordinateError("Invalid coordinate is not in matrix")
+      throw new MatrixAdaptCoordinateError(
+        "Invalid coordinate is not in matrix"
+      );
     }
-  };
+  }
   /**
-   * Fill in matrixBody color of pixel off 
+   * Fill in matrixBody color of pixel off
    */
   public off = (): void => {
     this.drawer.filling(this.colorPixelOff);
-  }
-};
+  };
+}

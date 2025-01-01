@@ -1,14 +1,17 @@
 import { backgroundColor } from "../../surse/intefases";
 import { PixelStyle } from "./PixelStyle";
-import "./PixelStyle.css"
+import "./PixelStyle.css";
 interface propsForPixel {
-  color: backgroundColor,
+  color: backgroundColor;
 }
 
 const Pixsel = ({ color }: propsForPixel) => {
   return (
-    <div className="pixel" style={{ ...PixelStyle, ...color }} data-testid="pixel">
-    </div>
+    <div
+      className="pixel"
+      style={{ ...PixelStyle, ...color }}
+      data-testid="pixel"
+    ></div>
   );
 };
 

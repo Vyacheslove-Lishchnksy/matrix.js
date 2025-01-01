@@ -18,11 +18,17 @@ class Coordinate2D {
   }
 
   public toAdd(coordinate: Coordinate2D | coordinate): Coordinate2D {
-    return new Coordinate2D({ x: this.x + coordinate.x, y: this.y + coordinate.y });
+    return new Coordinate2D({
+      x: this.x + coordinate.x,
+      y: this.y + coordinate.y,
+    });
   }
 
   public toSub(coordinate: Coordinate2D | coordinate): Coordinate2D {
-    return new Coordinate2D({ x: this.x - coordinate.x, y: this.y - coordinate.y });
+    return new Coordinate2D({
+      x: this.x - coordinate.x,
+      y: this.y - coordinate.y,
+    });
   }
 
   public toMult(value: number): Coordinate2D {
