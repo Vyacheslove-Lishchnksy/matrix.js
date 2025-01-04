@@ -2,12 +2,14 @@ import { drawFunctionArgumants } from "../components/AppBody";
 import { white } from "./setaps/colorama/colors";
 import { drawDozens } from "./setaps/drawer/numbers";
 
-export const before = ({ matrix }: drawFunctionArgumants) => {};
+export const before = ({ matrix }: drawFunctionArgumants) => {
+  matrix.off();
+};
 
 let frameCounter = 0;
 let iterator = 0;
 
-export const draw = ({ matrix, pressNow }: drawFunctionArgumants) => {
+export const draw = ({ matrix }: drawFunctionArgumants) => {
   matrix.off();
 
   drawDozens(
