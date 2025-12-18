@@ -1,6 +1,8 @@
 # What is matrix?
 matrix is a React-based framework that simulates matrices of arbitrary size.
 
+## Example: [matrix.js](https://vyacheslove-lishchnksy.github.io/matrix.js/)
+
 ![matrix_gif](https://github.com/user-attachments/assets/ee0c443a-4119-4d4e-8721-08249377ec70)
 
 # How to write programs?
