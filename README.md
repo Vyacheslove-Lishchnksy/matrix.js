@@ -12,11 +12,9 @@ before — executes the code once before the main process of the application beg
 # The `draw` function
 draw — is the main function that repeats continuously throughout the entire lifecycle of the application.\
 
-Ось готовий текст у форматі Markdown (.md), який ви можете просто скопіювати та зберегти у файл.
-
-```markdown
-# Getting Started
 ---
+
+# Getting Started
 The program is written here: `./app/main.ts`. However, you first need to configure the project in the `./utils/constants.ts` file. It looks like this:
 
 ```typescript
@@ -25,8 +23,8 @@ export const matrixParams: paramsForMatrix = {
   rows: 16,
   fps: 3
 }
-
 ```
+
 
 These are the default parameters.
 
@@ -36,9 +34,7 @@ These are the default parameters.
 
 Now you can return to the main file.
 
-# Working with draw
-
----
+# Working with `draw`
 
 The minimal configuration for operation looks like this:
 
