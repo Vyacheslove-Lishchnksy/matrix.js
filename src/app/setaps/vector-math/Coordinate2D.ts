@@ -1,4 +1,4 @@
-import { coordinate } from "../../../surse/intefases";
+import { coordinate } from "../../../core/intefases";
 
 class Coordinate2D {
   public x: number;

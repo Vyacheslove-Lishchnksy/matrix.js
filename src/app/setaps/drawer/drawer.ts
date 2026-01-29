@@ -1,5 +1,5 @@
-import Matrix from "../../../surse/Matrix";
-import { backgroundColor, coordinate } from "../../../surse/intefases";
+import Matrix from "../../../core/Matrix";
+import { backgroundColor, coordinate } from "../../../core/intefases";
 
 interface circleParams {
   center: coordinate;
@@ -10,7 +10,7 @@ interface circleParams {
 const isPointOfCircle = (
   center: coordinate,
   dot: coordinate,
-  radius: number
+  radius: number,
 ): boolean => {
   if ((dot.x - center.x) ** 2 + (dot.y - center.y) ** 2 <= radius ** 2) {
     return true;
@@ -29,7 +29,7 @@ const isPointOfCircle = (
  */
 export const drawCircle = (
   matrix: Matrix,
-  { center, radius, fill }: circleParams
+  { center, radius, fill }: circleParams,
 ) => {
   for (let x = 0; x < matrix.columns; x++) {
     for (let y = 0; y < matrix.rows; y++) {

@@ -1,10 +1,10 @@
 import { white } from "../app/setaps/colorama/colors";
-import Matrix from "../surse/Matrix";
+import Matrix from "../core/Matrix";
 import {
   MatrixAdaptCoordinateError,
   MatrixParamsError,
-} from "../surse/MatrixErrors";
-import { coordinate } from "../surse/intefases";
+} from "../core/MatrixErrors";
+import { coordinate } from "../core/intefases";
 
 const matrixParamsTest = {
   columns: 16,
@@ -69,7 +69,7 @@ describe("adaptCoordinate tests", () => {
   });
   test("adaptCoordinate invalide value", () => {
     expect(() => matrix.adaptCoordinate(invalideCoordinate)).toThrow(
-      MatrixAdaptCoordinateError
+      MatrixAdaptCoordinateError,
     );
   });
 });

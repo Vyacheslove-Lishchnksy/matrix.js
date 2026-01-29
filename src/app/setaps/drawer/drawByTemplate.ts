@@ -1,5 +1,5 @@
-import { backgroundColor } from "../../../surse/intefases";
-import Matrix from "../../../surse/Matrix";
+import { backgroundColor } from "../../../core/intefases";
+import Matrix from "../../../core/Matrix";
 
 interface templateParams {
   position: { x: number; y: number };
@@ -9,7 +9,7 @@ interface templateParams {
 function drawByTemplate(
   matrix: Matrix,
   tenplate: number[][],
-  { position, fill }: templateParams
+  { position, fill }: templateParams,
 ) {
   tenplate.forEach((row, y) => {
     row.forEach((element, x) => {

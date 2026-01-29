@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import Matrix from "../surse/Matrix";
+import Matrix from "../core/Matrix";
 import Pixsel from "./Pixel/Pixel";
-import { backgroundColor } from "../surse/intefases";
+import { backgroundColor } from "../core/intefases";
 import { before, draw } from "../app/main";
-import checkIsThisParamsValide from "../surse/checkIsThisParamsValide";
+import checkIsThisParamsValide from "../core/checkIsThisParamsValide";
 
 interface propsForAppBody {
   matrix: Matrix;

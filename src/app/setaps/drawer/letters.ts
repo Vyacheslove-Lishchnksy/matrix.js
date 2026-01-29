@@ -1,5 +1,5 @@
-import Matrix from "../../../surse/Matrix";
-import { backgroundColor, coordinate } from "../../../surse/intefases";
+import Matrix from "../../../core/Matrix";
+import { backgroundColor, coordinate } from "../../../core/intefases";
 import { alphabet, convertSymbolToCode } from "./Letter";
 
 interface letterParams {
@@ -15,7 +15,7 @@ interface letterParams {
 export const drawLetter = (
   matrix: Matrix,
   letter: string,
-  { position, fill }: letterParams
+  { position, fill }: letterParams,
 ) => {
   alphabet[convertSymbolToCode(letter)].forEach((row, y) => {
     row.forEach((element, x) => {

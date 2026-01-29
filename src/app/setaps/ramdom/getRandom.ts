@@ -1,5 +1,5 @@
-import Matrix from "../../../surse/Matrix";
-import { coordinate } from "../../../surse/intefases";
+import Matrix from "../../../core/Matrix";
+import { coordinate } from "../../../core/intefases";
 import Random from "./Random";
 
 const random = new Random(Date.now());

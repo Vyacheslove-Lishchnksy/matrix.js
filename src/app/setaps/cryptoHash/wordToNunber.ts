@@ -8,7 +8,7 @@ const alphabetUA: string = isUseUA
 const numbers: string = "1234567890";
 const symbols: string = "!@#$%&^*()[]/\\";
 const cryptoKey: string[] = (alphabet + alphabetUA + numbers + symbols).split(
-  ""
+  "",
 );
 
 export const conwertWordToNumber = (word: string): number => {
@@ -25,7 +25,7 @@ export const getHash = (seed: number, length?: number): string => {
     length = 32;
   }
   const random = new Random(seed);
-  let resalt: string[] = [];
+  const resalt: string[] = [];
   for (let i = 0; i < length; i++) {
     resalt.push(cryptoKey[Math.floor(random.getRandom() * cryptoKey.length)]);
   }

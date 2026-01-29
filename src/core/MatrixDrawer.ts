@@ -1,4 +1,5 @@
 import Matrix from "./Matrix";
+import { MatrixAdaptCoordinateError } from "./MatrixErrors";
 import { backgroundColor, coordinate } from "./intefases";
 /**
  * Відповідає за малювання пікселів на матриці.
@@ -20,7 +21,12 @@ export default class MatrixDrawer {
     try {
       const matrixCoordinate: number = this.matrix.adaptCoordinate({ x, y });
       this.matrix.body[matrixCoordinate] = fill;
-    } catch {}
+    } catch (error) {
+      if (error instanceof MatrixAdaptCoordinateError) {
+        return;
+      }
+      throw error;
+    }
   };
   /**
    * Заповненя матриці одним кольором.

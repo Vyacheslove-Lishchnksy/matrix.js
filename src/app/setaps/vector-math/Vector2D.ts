@@ -1,4 +1,4 @@
-import { coordinate } from "../../../surse/intefases";
+import { coordinate } from "../../../core/intefases";
 import Coordinate2D from "./Coordinate2D";
 
 class Vector2D extends Coordinate2D {
