@@ -1,6 +1,6 @@
 import { drawFunctionArgumants } from "../components/AppBody";
-import { white } from "./setaps/colorama/colors";
-import { drawDozens } from "./setaps/drawer/numbers";
+import { white } from "../utils/libs/colorama/colors";
+import { drawDozens } from "../utils/libs/drawer/numbers";
 
 export const before = ({ matrix }: drawFunctionArgumants) => {
   matrix.off();
@@ -21,7 +21,7 @@ export const draw = ({ matrix }: drawFunctionArgumants) => {
         y: matrix.rows / 2 - 4,
       }, //Позиція відносно лівого верхнього кута
       fill: white, //Колір цифр
-    }
+    },
   );
 
   // Треба домножати на те скільки секунд треба чекати

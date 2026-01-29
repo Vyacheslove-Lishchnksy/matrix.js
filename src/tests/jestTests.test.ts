@@ -1,4 +1,4 @@
-import { white } from "../app/setaps/colorama/colors";
+import { white } from "../utils/libs/colorama/colors";
 import Matrix from "../core/Matrix";
 import {
   MatrixAdaptCoordinateError,

@@ -1,4 +1,4 @@
-import deepEqual, { deepEqualIsIn } from "../app/setaps/deepEqual/deepEqual";
+import deepEqual, { deepEqualIsIn } from "../utils/libs/deepEqual/deepEqual";
 import Matrix from "./Matrix";
 import { backgroundColor } from "./intefases";
 /**

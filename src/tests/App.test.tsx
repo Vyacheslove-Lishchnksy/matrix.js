@@ -3,8 +3,8 @@ import { matrixParams } from "../utils/constants";
 import App from "../App";
 import useMatrix from "../utils/hooks/useMatrix";
 import { valideCoordinate } from "./jestTests.test";
-import { white } from "../app/setaps/colorama/colors";
-import { convertRgbToPixelColor } from "../app/setaps/colorama/PixelColor";
+import { white } from "../utils/libs/colorama/colors";
+import { convertRgbToPixelColor } from "../utils/libs/colorama/PixelColor";
 
 const colorOfMatrixOff = convertRgbToPixelColor({
   red: 23,
