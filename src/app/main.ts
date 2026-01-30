@@ -24,7 +24,6 @@ export const draw = ({ matrix }: drawFunctionArgumants) => {
     },
   );
 
-  // Треба домножати на те скільки секунд треба чекати
   if (frameCounter === matrix.fps * 1) {
     iterator++;
     frameCounter = 0;
