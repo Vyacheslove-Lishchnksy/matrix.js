@@ -1,6 +1,6 @@
 import { paramsForMatrix } from "../utils/constants";
 import { MatrixAdaptCoordinateError, MatrixParamsError } from "./MatrixErrors";
-import { backgroundColor, coordinate } from "./intefases";
+import { backgroundColor, coordinate } from "./intefaces";
 import MatrixDrawer from "./MatrixDrawer";
 import MatrixTaster from "./MatrixTester";
 /**
@@ -50,7 +50,7 @@ export default class Matrix {
       return this.columns * y + x;
     } else {
       throw new MatrixAdaptCoordinateError(
-        "Invalid coordinate is not in matrix"
+        "Invalid coordinate is not in matrix",
       );
     }
   }

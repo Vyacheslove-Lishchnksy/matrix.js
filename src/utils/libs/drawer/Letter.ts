@@ -4,7 +4,7 @@
  * @returns {boolean}
  */
 export const isAlpha = (symbol: string): boolean => {
-  if (symbol.toUpperCase() !== symbol.toLowerCase()) {
+  if (symbol.length === 1 && symbol.toUpperCase() !== symbol.toLowerCase()) {
     return true;
   } else {
     return false;
@@ -12,7 +12,7 @@ export const isAlpha = (symbol: string): boolean => {
 };
 const codes = [
   "s_dash",
-  "s_spase",
+  "s_space",
   "s_slash",
   "s_rslash",
   "s_point",
@@ -23,16 +23,14 @@ const codes = [
   "s_emphasis",
 ];
 const symbols = ["-", " ", "/", "\\", ".", "|", "(", ")", "%", "_"];
-/**
- * Конвертує символ в умовний код
- * @param {string} symbol - символ
- * @returns {string} - умовний код
- */
 export const convertSymbolToCode = (symbol: string): string => {
   if (isAlpha(symbol)) {
     return symbol.toUpperCase();
   } else {
     const index = symbols.findIndex((element) => element === symbol);
+    if (index === -1) {
+      return "";
+    }
     return codes[index];
   }
 };
@@ -310,7 +308,7 @@ export const alphabet: Record<string, number[][]> = {
     [0, 0, 0, 0],
     [0, 0, 0, 0],
   ],
-  s_spase: [
+  s_space: [
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { backgroundColor } from "../../core/intefases";
+import { backgroundColor } from "../../core/intefaces";
 import { matrixParams } from "../constants";
 import Matrix from "../../core/Matrix";
 

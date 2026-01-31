@@ -1,6 +1,6 @@
 import Matrix from "./Matrix";
 import { MatrixAdaptCoordinateError } from "./MatrixErrors";
-import { backgroundColor, coordinate } from "./intefases";
+import { backgroundColor, coordinate } from "./intefaces";
 /**
  * Відповідає за малювання пікселів на матриці.
  */

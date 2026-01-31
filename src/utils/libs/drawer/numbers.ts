@@ -1,5 +1,5 @@
 import Matrix from "../../../core/Matrix";
-import { backgroundColor, coordinate } from "../../../core/intefases";
+import { backgroundColor, coordinate } from "../../../core/intefaces";
 import Integer from "./Integer";
 
 const DEFAULT_FOUNT_WIDTH = 4;

@@ -1,5 +1,5 @@
 import Matrix from "../../../core/Matrix";
-import { backgroundColor, coordinate } from "../../../core/intefases";
+import { backgroundColor, coordinate } from "../../../core/intefaces";
 
 interface circleParams {
   center: coordinate;

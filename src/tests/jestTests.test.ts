@@ -4,7 +4,7 @@ import {
   MatrixAdaptCoordinateError,
   MatrixParamsError,
 } from "../core/MatrixErrors";
-import { coordinate } from "../core/intefases";
+import { coordinate } from "../core/intefaces";
 
 const matrixParamsTest = {
   columns: 16,

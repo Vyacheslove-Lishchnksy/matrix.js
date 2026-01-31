@@ -1,4 +1,4 @@
-import { backgroundColor } from "../../../core/intefases";
+import { backgroundColor } from "../../../core/intefaces";
 import getRandom from "../ramdom/getRandom";
 
 export interface rgbParams {

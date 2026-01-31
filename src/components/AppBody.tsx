@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Matrix from "../core/Matrix";
-import Pixsel from "./Pixel/Pixel";
-import { backgroundColor } from "../core/intefases";
+import Pixel from "./Pixel/Pixel";
+import { backgroundColor } from "../core/intefaces";
 import { before, draw } from "../app/main";
-import checkIsThisParamsValide from "../core/checkIsThisParamsValide";
+import checkIsThisParamsValid from "../core/checkIsThisParamsValide";
 
 interface propsForAppBody {
   matrix: Matrix;
@@ -11,34 +11,53 @@ interface propsForAppBody {
   printer: React.Dispatch<React.SetStateAction<backgroundColor[]>>;
 }
 
-export interface drawFunctionArgumants {
+export interface drawFunctionArguments {
   matrix: Matrix;
   printer: React.Dispatch<React.SetStateAction<backgroundColor[]>>;
   pressNow: string;
+  writeNow: string;
 }
-
-let pressNow: string = "";
 
 const AppBody = ({
   matrix,
   matrixBody,
   printer,
 }: propsForAppBody): JSX.Element => {
+  const pressNow = useRef("");
+  const writeNow = useRef("");
+
   const handleKeyDown = async (event: KeyboardEvent) => {
-    pressNow = event.code;
+    pressNow.current = event.code;
+    writeNow.current = event.key;
+  };
+
+  const handleKeyUp = async () => {
+    pressNow.current = "";
+    writeNow.current = "";
   };
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
-    checkIsThisParamsValide(matrix);
-    before({ matrix, printer, pressNow });
+    document.addEventListener("keyup", handleKeyUp);
+    checkIsThisParamsValid(matrix);
+    before({
+      matrix,
+      printer,
+      pressNow: pressNow.current,
+      writeNow: writeNow.current,
+    });
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      draw({ matrix, printer, pressNow });
+      draw({
+        matrix,
+        printer,
+        pressNow: pressNow.current,
+        writeNow: writeNow.current,
+      });
       printer([...matrix.body]);
-      pressNow = "";
+      pressNow.current = "";
     }, matrix.timeFrame);
 
     return () => clearInterval(interval);
@@ -47,7 +66,7 @@ const AppBody = ({
   return (
     <>
       {matrixBody.map((style, index) => (
-        <Pixsel key={index} color={style} />
+        <Pixel key={index} color={style} />
       ))}
     </>
   );

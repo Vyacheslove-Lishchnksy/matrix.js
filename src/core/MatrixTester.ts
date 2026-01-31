@@ -1,6 +1,6 @@
 import deepEqual, { deepEqualIsIn } from "../utils/libs/deepEqual/deepEqual";
 import Matrix from "./Matrix";
-import { backgroundColor } from "./intefases";
+import { backgroundColor } from "./intefaces";
 /**
  * Модуль відповідальний за перевірку даних матриці
  */

@@ -1,11 +1,11 @@
-import { backgroundColor } from "../../core/intefases";
+import { backgroundColor } from "../../core/intefaces";
 import { PixelStyle } from "./PixelStyle";
 import "./PixelStyle.css";
 interface propsForPixel {
   color: backgroundColor;
 }
 
-const Pixsel = ({ color }: propsForPixel) => {
+const Pixel = ({ color }: propsForPixel) => {
   return (
     <div
       className="pixel"
@@ -15,4 +15,4 @@ const Pixsel = ({ color }: propsForPixel) => {
   );
 };
 
-export default Pixsel;
+export default Pixel;

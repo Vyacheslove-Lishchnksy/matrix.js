@@ -1,5 +1,5 @@
 import Matrix from "../../../core/Matrix";
-import { backgroundColor, coordinate } from "../../../core/intefases";
+import { backgroundColor, coordinate } from "../../../core/intefaces";
 import { alphabet, convertSymbolToCode } from "./Letter";
 
 interface letterParams {
@@ -17,7 +17,12 @@ export const drawLetter = (
   letter: string,
   { position, fill }: letterParams,
 ) => {
-  alphabet[convertSymbolToCode(letter)].forEach((row, y) => {
+  const letterCode = convertSymbolToCode(letter);
+  if (letterCode === "") {
+    return;
+  }
+
+  alphabet[letterCode].forEach((row, y) => {
     row.forEach((element, x) => {
       if (element) {
         matrix.drawer.drawPixel({ x: position.x + x, y: position.y + y }, fill);
