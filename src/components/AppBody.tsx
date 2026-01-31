@@ -3,7 +3,7 @@ import Matrix from "../core/Matrix";
 import Pixel from "./Pixel/Pixel";
 import { backgroundColor } from "../core/interfaces";
 import { before, draw } from "../app/main";
-import checkIsThisParamsValid from "../core/checkIsThisParamsValide";
+import checkIsThisParamsValid from "../core/checkIsThisParamsValid";
 
 interface propsForAppBody {
   matrix: Matrix;

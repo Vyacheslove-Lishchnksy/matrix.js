@@ -1,4 +1,4 @@
-import validParamsForApp from "../utils/valideParamseForApp";
+import validParamsForApp from "../utils/validParamsForApp";
 import Matrix from "./Matrix";
 /**
  * Перевіряє чи валідні параметри задані користувачем.
