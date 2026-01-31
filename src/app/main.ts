@@ -1,6 +1,6 @@
 import { drawFunctionArguments } from "../components/AppBody";
 import { white } from "../utils/libs/colorama/colors";
-import { drawLetter } from "../utils/libs/drawer";
+import Drawer from "../utils/libs/drawer";
 
 export const before = ({ matrix }: drawFunctionArguments) => {
   matrix.off();
@@ -27,8 +27,10 @@ export const draw = ({ matrix, writeNow }: drawFunctionArguments) => {
   // }
   // frameCounter++;
 
+  const drawer = new Drawer(matrix);
+
   matrix.off();
-  drawLetter(matrix, writeNow, {
+  drawer.drawingLetter(writeNow, {
     position: {
       x: matrix.columns / 2 - 4,
       y: matrix.rows / 2 - 4,

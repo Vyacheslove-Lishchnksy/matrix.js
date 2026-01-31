@@ -1,5 +1,6 @@
-import { backgroundColor } from "../../../core/intefaces";
+import { backgroundColor } from "../../../core/interfaces";
 import Matrix from "../../../core/Matrix";
+import { Template } from "./interfaces";
 
 interface templateParams {
   position: { x: number; y: number };
@@ -8,10 +9,10 @@ interface templateParams {
 
 function drawByTemplate(
   matrix: Matrix,
-  tenplate: number[][],
+  template: Template,
   { position, fill }: templateParams,
 ) {
-  tenplate.forEach((row, y) => {
+  template.forEach((row, y) => {
     row.forEach((element, x) => {
       if (element) {
         matrix.drawer.drawPixel({ x: x + position.x, y: y + position.y }, fill);

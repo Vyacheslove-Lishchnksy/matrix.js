@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Matrix from "../core/Matrix";
 import Pixel from "./Pixel/Pixel";
-import { backgroundColor } from "../core/intefaces";
+import { backgroundColor } from "../core/interfaces";
 import { before, draw } from "../app/main";
 import checkIsThisParamsValid from "../core/checkIsThisParamsValide";
 

@@ -1,5 +1,5 @@
 import Matrix from "../../../core/Matrix";
-import { backgroundColor, coordinate } from "../../../core/intefaces";
+import { backgroundColor, coordinate } from "../../../core/interfaces";
 
 interface circleParams {
   center: coordinate;
@@ -18,15 +18,7 @@ const isPointOfCircle = (
     return false;
   }
 };
-/**
- * Малює коло на матриці
- * @param {Matrix} matrix - об'єкт матриці
- * @param {circleParams} - {
- * {coordinate} center - центер кола
- * {number} radius - радіус кола
- * {backgroundColor} fill - колір кола
- * }
- */
+
 export const drawCircle = (
   matrix: Matrix,
   { center, radius, fill }: circleParams,

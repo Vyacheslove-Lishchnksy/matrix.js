@@ -1,5 +1,5 @@
 import Matrix from "../../../core/Matrix";
-import { backgroundColor, coordinate } from "../../../core/intefaces";
+import { backgroundColor, coordinate } from "../../../core/interfaces";
 import { alphabet, convertSymbolToCode } from "./Letter";
 
 interface letterParams {

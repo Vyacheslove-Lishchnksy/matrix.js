@@ -1,4 +1,4 @@
-import Random from "../ramdom/Random";
+import Random from "../random/Random";
 
 const isUseUA: boolean = false;
 const alphabet: string = "abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ";

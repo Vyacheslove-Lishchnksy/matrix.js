@@ -1,4 +1,4 @@
-import valideParamsForApp from "../utils/valideParamseForApp";
+import validParamsForApp from "../utils/valideParamseForApp";
 import Matrix from "./Matrix";
 /**
  * Перевіряє чи валідні параметри задані користувачем.
@@ -8,7 +8,7 @@ import Matrix from "./Matrix";
 const checkIsThisParamsValide = (matrix: Matrix) => {
   if (!isValideParamsForApp(matrix)) {
     throw new InvalideParamsForAppError(
-      "Your params are not valide (according to the autor)"
+      "Your params are not valide (according to the autor)",
     );
   }
 };
@@ -19,30 +19,30 @@ const checkIsThisParamsValide = (matrix: Matrix) => {
  */
 const isValideParamsForApp = (matrix: Matrix): boolean => {
   if (
-    valideParamsForApp.rowMoreThen &&
-    matrix.rows < valideParamsForApp.rowMoreThen
+    validParamsForApp.rowMoreThen &&
+    matrix.rows < validParamsForApp.rowMoreThen
   ) {
     return false;
   }
   if (
-    valideParamsForApp.colunMoreThen &&
-    matrix.columns < valideParamsForApp.colunMoreThen
+    validParamsForApp.columnMoreThen &&
+    matrix.columns < validParamsForApp.columnMoreThen
   ) {
     return false;
   }
   if (
-    valideParamsForApp.rowLessThen &&
-    matrix.rows > valideParamsForApp.rowLessThen
+    validParamsForApp.rowLessThen &&
+    matrix.rows > validParamsForApp.rowLessThen
   ) {
     return false;
   }
   if (
-    valideParamsForApp.colunLessThen &&
-    matrix.columns > valideParamsForApp.colunLessThen
+    validParamsForApp.columnLessThen &&
+    matrix.columns > validParamsForApp.columnLessThen
   ) {
     return false;
   }
-  if (valideParamsForApp.fps && matrix.fps !== valideParamsForApp.fps) {
+  if (validParamsForApp.fps && matrix.fps !== validParamsForApp.fps) {
     return false;
   }
   return true;

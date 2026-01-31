@@ -1,14 +1,14 @@
 interface paramsForApp {
   rowMoreThen?: number;
-  colunMoreThen?: number;
+  columnMoreThen?: number;
   rowLessThen?: number;
-  colunLessThen?: number;
+  columnLessThen?: number;
   fps?: number;
 }
 
-const valideParamsForApp: paramsForApp = {
+const validParamsForApp: paramsForApp = {
   rowMoreThen: 16,
-  colunMoreThen: 16,
-}
+  columnMoreThen: 16,
+};
 
-export default valideParamsForApp;
+export default validParamsForApp;

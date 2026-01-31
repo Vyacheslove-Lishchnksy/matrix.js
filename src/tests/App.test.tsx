@@ -2,7 +2,7 @@ import { act, render, renderHook, screen } from "@testing-library/react";
 import { matrixParams } from "../utils/constants";
 import App from "../App";
 import useMatrix from "../utils/hooks/useMatrix";
-import { valideCoordinate } from "./jestTests.test";
+import { validCoordinate } from "./jestTests.test";
 import { white } from "../utils/libs/colorama/colors";
 import { convertRgbToPixelColor } from "../utils/libs/colorama/PixelColor";
 
@@ -36,7 +36,7 @@ describe("Hook tests", () => {
     act(() => {
       setMatrixBody([...matrixBody]);
     });
-    matrix.drawer.drawPixel(valideCoordinate, white);
+    matrix.drawer.drawPixel(validCoordinate, white);
     expect(matrixBody[101]).toEqual(white);
   });
   test("matrix off test", () => {

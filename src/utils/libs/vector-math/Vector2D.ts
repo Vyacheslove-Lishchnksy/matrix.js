@@ -1,4 +1,4 @@
-import { coordinate } from "../../../core/intefaces";
+import { coordinate } from "../../../core/interfaces";
 import Coordinate2D from "./Coordinate2D";
 
 class Vector2D extends Coordinate2D {

@@ -4,7 +4,7 @@ import {
   MatrixAdaptCoordinateError,
   MatrixParamsError,
 } from "../core/MatrixErrors";
-import { coordinate } from "../core/intefaces";
+import { coordinate } from "../core/interfaces";
 
 const matrixParamsTest = {
   columns: 16,
@@ -30,45 +30,45 @@ const invalidParamsTest = {
   fps: 3,
 };
 
-export const valideCoordinate: coordinate = { x: 5, y: 6 };
+export const validCoordinate: coordinate = { x: 5, y: 6 };
 export const zeroCoordinate: coordinate = { x: 0, y: 0 };
 export const maxCoordinate: coordinate = { x: 15, y: 15 };
-export const invalideCoordinate: coordinate = { x: 19, y: 17 };
+export const invalidCoordinate: coordinate = { x: 19, y: 17 };
 
-describe("lenhgt tests", () => {
-  test("valide value", () => {
+describe("length tests", () => {
+  test("valid value", () => {
     const matrix = new Matrix(matrixParamsTest);
-    expect(matrix.lenght).toBe(256);
+    expect(matrix.length).toBe(256);
   });
   test("zero value", () => {
     const matrix = new Matrix(zeroParamsTest);
-    expect(matrix.lenght).toBe(0);
+    expect(matrix.length).toBe(0);
   });
   test("big value", () => {
     const matrix = new Matrix(bigParamsTest);
-    expect(matrix.lenght).toBe(4_096);
+    expect(matrix.length).toBe(4_096);
   });
   test("invalid value", () => {
     expect(() => {
       const matrix = new Matrix(invalidParamsTest);
-      matrix.adaptCoordinate({ x: 3, y: 7 });
+      matrix.drawer.adaptCoordinate({ x: 3, y: 7 });
     }).toThrow(MatrixParamsError);
   });
 });
 
 describe("adaptCoordinate tests", () => {
   const matrix = new Matrix(matrixParamsTest);
-  test("adaptCoordinate valide value", () => {
-    expect(matrix.adaptCoordinate(valideCoordinate)).toBe(101);
+  test("adaptCoordinate valid value", () => {
+    expect(matrix.drawer.adaptCoordinate(validCoordinate)).toBe(101);
   });
   test("adaptCoordinate zero value", () => {
-    expect(matrix.adaptCoordinate(zeroCoordinate)).toBe(0);
+    expect(matrix.drawer.adaptCoordinate(zeroCoordinate)).toBe(0);
   });
   test("adaptCoordinate max value", () => {
-    expect(matrix.adaptCoordinate(maxCoordinate)).toBe(255);
+    expect(matrix.drawer.adaptCoordinate(maxCoordinate)).toBe(255);
   });
-  test("adaptCoordinate invalide value", () => {
-    expect(() => matrix.adaptCoordinate(invalideCoordinate)).toThrow(
+  test("adaptCoordinate invalid value", () => {
+    expect(() => matrix.drawer.adaptCoordinate(invalidCoordinate)).toThrow(
       MatrixAdaptCoordinateError,
     );
   });

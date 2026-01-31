@@ -1,4 +1,4 @@
-import { backgroundColor } from "../../../core/intefaces";
+import { backgroundColor } from "../../../core/interfaces";
 import { convertHexToPixelColor } from "./PixelColor";
 
 export const white: backgroundColor = convertHexToPixelColor({

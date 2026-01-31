@@ -1,19 +1,14 @@
 import Matrix from "../../../core/Matrix";
-import { backgroundColor, coordinate } from "../../../core/intefaces";
 import Integer from "./Integer";
+import { IIntegerParams } from "./interfaces";
 
 const DEFAULT_FOUNT_WIDTH = 4;
 
-interface integerParams {
-  position: coordinate;
-  fill: backgroundColor;
-  between?: number;
-}
 /**
  *
  * @param matrix - Головна матриця
  * @param int - Цифра яка має бути намальована
- * @param {integerParams} - {
+ * @param {IIntegerParams} - {
  * {coordinate} position - позиція букви відносно верхнього лівого кута.
  * {background} fill - колір яким буде заповнена цифра
  * }
@@ -21,7 +16,7 @@ interface integerParams {
 export const drawNumber = (
   matrix: Matrix,
   int: number,
-  { position, fill }: integerParams,
+  { position, fill }: IIntegerParams,
 ) => {
   Integer.numbers[int].forEach((row, y) => {
     row.forEach((element, x) => {
@@ -35,7 +30,7 @@ export const drawNumber = (
 export const drawDozens = (
   matrix: Matrix,
   int: number,
-  { position, fill, between }: integerParams,
+  { position, fill, between }: IIntegerParams,
 ) => {
   drawNumber(matrix, (int - (int % 10)) / 10, { position, fill });
   drawNumber(matrix, int % 10, {

@@ -1,4 +1,4 @@
-import { backgroundColor } from "../../core/intefaces";
+import { backgroundColor } from "../../core/interfaces";
 import { PixelStyle } from "./PixelStyle";
 import "./PixelStyle.css";
 interface propsForPixel {
